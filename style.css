@@ -1,0 +1,1845 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.hexashop {
+    text-shadow: 2px 2px 4px #000000;
+    color: white;
+}
+
+li {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.ham-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    color: black;
+    height: 65px;
+    padding: 1em;
+    font-weight: bolder;
+    font-size: 25px;
+
+}
+
+.ham-menu li:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.ham-menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.ham-menu>li {
+    margin: 0 16px;
+    overflow: hidden;
+}
+
+/*Container for menu button  */
+.menu-button-container {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+
+
+#menu-toggle {
+    display: none;
+}
+
+/*  Creating the menu button */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #090909;
+    position: absolute;
+    height: 6px;
+    width: 32px;
+    border-radius: 3px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+
+/*  Adding Functionality to the Hamburger Menu with CSS  */
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    /*  transforms the hamburger icon into a cross  */
+    transform: rotate(-45deg);
+}
+
+#menu-toggle:checked ~ .ham-menu {
+    display: flex;
+}
+
+
+/* Making the navbar responsive by CSS Media Queries */
+@media screen and (max-width:700px) {
+    .menu-button-container {
+        display: flex;
+        position: relative;
+        }
+        
+        .ham-menu {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        margin-top: 100px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    #menu-toggle ~ .ham-menu li {
+        height: 0px;
+        margin: -8px;
+        padding: 0;
+        border: 0;
+        
+    }
+
+    #menu-toggle:checked ~ .ham-menu li {
+        border: 1px solid #9f9a9a;
+        height: 70px;
+        padding: 0.5em;
+    }
+
+    .ham-menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: black;
+        background-color: #E8E8E8;
+        transition: all 1s ease;
+    }
+
+}
+
+hr {
+    border: none;
+    border-top: 2px dotted grey;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    gap: 55px;
+    height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.mainright {
+    height: auto;
+    width: 100%;
+}
+
+.we {
+    color: white;
+    font-weight: 1400;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.awe {
+    color: white;
+    font-size: 15px;
+}
+
+
+
+
+
+
+.grid {
+    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 700px 280px 280px;
+    grid-template-rows: 237px 237px;
+    gap: 25px;
+    height: auto;
+    width: 100%;
+
+}
+
+.box-0 {
+
+    grid-column: 1/2;
+    grid-row: 1/3;
+    background-image: url(./left-banner-image.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-1 {
+    background-image: url(./baner-right-image-01.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.ccc {
+    position: absolute;
+    bottom: -250px;
+    left: 15px;
+    width: 230px;
+    height: 210px;
+    color: white;
+    background-color: rgb(37, 33, 33);
+    transition: all 1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.wo {
+    position: absolute;
+    top: -40px;
+    left: 55px;
+    padding: 0px;
+    font-size: 35px;
+}
+
+.dis {
+
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+
+.box-1:hover .ccc {
+
+    transform: translateY(-260px);
+}
+
+.pop {
+
+    font-size: 15px;
+    position: absolute;
+    top: 65px;
+    text-align: center;
+    padding: 0px;
+    color: white;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    overflow: hidden;
+}
+
+.h44 {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.spann {
+    color: white;
+}
+
+
+.box-2 {
+    background-image: url(./baner-right-image-02.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cccc {
+    position: absolute;
+    bottom: -250px;
+    left: 15px;
+    width: 230px;
+    height: 210px;
+    color: white;
+    background-color: rgb(37, 33, 33);
+    transition: all 1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.box-2:hover .cccc {
+
+    transform: translateY(-260px);
+}
+
+.woo {
+    position: absolute;
+    top: -40px;
+    left: 80px;
+    padding: 0px;
+    font-size: 35px;
+}
+
+.box-3 {
+    background-image: url(./baner-right-image-03.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ccccc {
+    position: absolute;
+    bottom: -250px;
+    left: 15px;
+    width: 230px;
+    height: 210px;
+    color: white;
+    background-color: rgb(37, 33, 33);
+    transition: all 1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.wooo {
+    position: absolute;
+    top: -40px;
+    left: 80px;
+    padding: 0px;
+    font-size: 35px;
+}
+
+.box-3:hover .ccccc {
+
+    transform: translateY(-260px);
+}
+
+.box-4 {
+    background-image: url(./baner-right-image-04.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 3/4;
+    grid-row: 2/3;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cccccc {
+    position: absolute;
+    bottom: -250px;
+    left: 15px;
+    width: 230px;
+    height: 210px;
+    color: white;
+    background-color: rgb(37, 33, 33);
+    transition: all 1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.woooo {
+    position: absolute;
+    top: -40px;
+    left: 35px;
+    padding: 0px;
+    font-size: 35px;
+}
+
+.box-4:hover .cccccc {
+
+    transform: translateY(-260px);
+}
+
+.menpage {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.menheading {
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+}
+
+span {
+    padding: 0px;
+}
+
+.names {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0px;
+    padding: 0px;
+    font-size: 34px;
+    font-weight: 700;
+    text-align: start;
+}
+
+.menphoto {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.mensliderleft {
+    background-image: url(./prev.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+    cursor: pointer;
+}
+
+.mensliderright {
+    background-image: url(./next.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+}
+
+/* add */
+.carousel-container {
+    overflow: hidden;
+    width: 1080px;
+}
+
+.carousel-slide {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.4s ease-in-out;
+}
+.slide {
+    min-width: 350px;
+    transition: 0.5s;
+}
+
+/* -- */
+
+.clothname {
+    font-size: 22px;
+    color: rgb(42, 42, 42);
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 8px;
+
+}
+
+span {
+
+    font-size: 18px;
+    color: rgb(161, 161, 161);
+    font-weight: 500;
+    display: block;
+    font-style: italic;
+
+}
+
+.one {
+    width: 350px;
+    height: 420px;
+
+}
+
+.menimg1 {
+    background-image: url(./men-01.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.menhover {
+    width: 340px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: absolute;
+    bottom: -70px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.menimg1:hover .menhover {
+    transform: translateY(-80px);
+
+}
+
+.menimg2:hover .menhover {
+    transform: translateY(-80px);
+
+}
+
+.menimg3:hover .menhover {
+    transform: translateY(-80px);
+
+}
+
+.menhover1 {
+    background-image: url(./eyes.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.menhover2 {
+    background-image: url(./star.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.menhover3 {
+    background-image: url(./shoping.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.two {
+    width: 350px;
+    height: 420px;
+
+}
+
+.menimg2 {
+    background-image: url(./men-02.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.three {
+    width: 350px;
+    height: 420px;
+
+}
+
+.menimg3 {
+    background-image: url(./men-03.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+
+
+.womenpage {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.womensliderright {
+    background-image: url(./next.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+}
+
+.womensliderleft {
+    background-image: url(./prev.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+}
+
+.womenheading {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    left: 120px;
+    top: 10px;
+
+
+}
+
+
+.womenphoto {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.womenhover1 {
+    background-image: url(./eyes.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+
+}
+
+.womenhover2 {
+    background-image: url(./star.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.womenhover3 {
+    background-image: url(./shoping.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.womenhover {
+    width: 340px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: absolute;
+    bottom: -70px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.womenimg1:hover .womenhover {
+    transform: translateY(-80px);
+
+}
+
+.womenimg2:hover .womenhover {
+    transform: translateY(-80px);
+
+}
+
+.womenimg3:hover .womenhover {
+    transform: translateY(-80px);
+
+}
+
+.womenimg1 {
+    background-image: url(./women-01.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.womenimg2 {
+    background-image: url(./women-02.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.womenimg3 {
+    background-image: url(./women-03.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.kidpage {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.kidheading {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    margin: 0px;
+    padding: 0px;
+
+
+}
+
+.kidsliderright {
+    background-image: url(./next.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+}
+
+.kidsliderleft {
+    background-image: url(./prev.png);
+    background-position: center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 150px;
+}
+
+
+.kidphoto {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.kidhover1 {
+    background-image: url(./eyes.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.kidhover2 {
+    background-image: url(./star.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.kidhover3 {
+    background-image: url(./shoping.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    width: 50px;
+    height: 45px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.kidhover {
+    width: 340px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    position: absolute;
+    bottom: -70px;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+.kidimg1:hover .kidhover {
+    transform: translateY(-80px);
+
+}
+
+.kidimg2:hover .kidhover {
+    transform: translateY(-80px);
+
+}
+
+.kidimg3:hover .kidhover {
+    transform: translateY(-80px);
+
+}
+
+.kidimg1 {
+    background-image: url(./kid-01.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.kidimg2 {
+    background-image: url(./kid-02.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.kidimg3 {
+    background-image: url(./kid-03.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.xplore {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+
+.xploreleft {
+    width: 50%;
+    height: 500px;
+
+}
+
+p {
+    font-style: italic;
+    color: rgb(42, 42, 42);
+    font-weight: 500;
+}
+
+button {
+    margin-top: 50px;
+    width: 150px;
+    height: 50px;
+    border-radius: 0%;
+}
+
+.grid-2 {
+    
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+    gap: 25px;
+    height: auto;
+    width: 100%;
+}
+
+.box-11 {
+    background-color: rgb(248, 248, 248);
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-12 {
+    background-image: url(./explore-image-01.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.box-13 {
+    background-image: url(./explore-image-02.jpg);
+    background-position: center;
+    background-size: cover;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.box-14 {
+    background-color: rgb(248, 248, 248);
+    grid-column: 2/3;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.SocialMedia {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    position: relative;
+}
+
+.SocialMediaphoto {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 150px;
+
+
+}
+
+.SocialMediaheading {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+}
+
+.new3 {
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+
+}
+
+.new2 {
+    position: absolute;
+    bottom: 5px;
+    left: 8px;
+}
+
+.fashion {
+    background-image: url(./instagram-01.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fashionhover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.815);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.fashion:hover .fashionhover {
+    transform: translateY(-200px);
+}
+
+.new {
+    background-image: url(./instagram-02.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.newhover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.new:hover .newhover {
+    transform: translateY(-200px);
+}
+
+.brand {
+    background-image: url(./instagram-03.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.brandhover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.brand:hover .brandhover {
+    transform: translateY(-200px);
+}
+
+.makeup {
+    background-image: url(./instagram-04.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.makeuphover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.makeup:hover .makeuphover {
+    transform: translateY(-200px);
+}
+
+.leather {
+    background-image: url(./instagram-05.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.leatherhover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.leather:hover .leatherhover {
+    transform: translateY(-200px);
+}
+
+.bag {
+    background-image: url(./instagram-06.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.baghover {
+    width: 199px;
+    height: 199px;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    left: 0px;
+    bottom: -200px;
+    overflow: hidden;
+    transition: all 0s;
+}
+
+.bag:hover .baghover {
+    transform: translateY(-200px);
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    gap: 50px;
+}
+
+.aboutleft {
+    width: 55%;
+    height: 300px;
+
+
+}
+
+.aboutright {
+    width: 30%;
+}
+
+.aboutright-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 300px;
+    width: 300px;
+}
+
+.box111 {
+    grid-template-columns: 1/2;
+    grid-template-rows: 1/2;
+
+
+}
+
+.box222 {
+    grid-template-columns: 2/3;
+    grid-template-rows: 1/2;
+
+}
+
+.box333 {
+    grid-template-columns: 1/2;
+    grid-template-rows: 2/3;
+
+}
+
+.box444 {
+    grid-template-columns: 2/3;
+    grid-template-rows: 2/3;
+
+}
+
+.box555 {
+    grid-template-columns: 1/2;
+    grid-template-rows: 3/4;
+
+}
+
+.box666 {
+    grid-template-columns: 2/3;
+    grid-template-rows: 3/4;
+
+}
+
+.foot {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    align-items: center;
+    background-color: rgb(42, 42, 42);
+}
+
+.tooplogo {
+    background-image: url(./white-logo.png);
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.toop {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1000px;
+    height: 30vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+.foothr {
+    margin-top: 50px;
+    border: none;
+    border-top: 0.5px solid white;
+    width: 80%;
+}
+
+.toopfontt {
+    color: white;
+}
+
+.toopfont {
+    color: white;
+    font-size: 15px;
+    font-style: normal;
+}
+
+.footdown {
+    position: absolute;
+    bottom: 70px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footicon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    width: 370px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footface {
+    background-image: url(./facebook.png);
+    background-size: cover;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+.foottw {
+    background-image: url(./tww.png);
+    background-size: cover;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+.footli {
+    background-image: url(./linkk.png);
+    background-size: cover;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+.footbe {
+    background-image: url(./beee.png);
+    background-size: cover;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (min-width:300px) and (max-width:600px) {
+
+    /* main page phone viwe */
+    .main {
+        height: auto;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .we {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 310px;
+        grid-template-rows: 280px 280px 280px 280px 280px;
+        gap: 10px;
+        height: auto;
+    }
+
+    .box-0 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .box-1 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .box-2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .box-3 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .box-4 {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    /* menpage phone viwe */
+    .menpage {
+        display: flex;
+        justify-content: center;
+        height: 650px;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .menheading {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        width: 270px;
+
+
+    }
+
+    .menphoto {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        overflow: hidden;
+        align-self: start;
+        width: 330px;
+        height: 500px;
+        position: absolute;
+        left: 25px;
+        top: 120px;
+
+    }
+
+    .one {
+        width: 310px;
+        height: 300px;
+
+    }
+
+    .menimg1 {
+        background-image: url(./men-01.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 310px;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .menhover {
+        width: 340px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0px;
+        position: absolute;
+        bottom: -70px;
+        left: -35px;
+        overflow: hidden;
+        transition: all 1s;
+    }
+
+    /* women phone viwe */
+
+    .womenheading {
+        left: 50px;
+        top: 10px;
+        width: 280px;
+    }
+    .one {
+        width: 310px;
+        height: 300px;
+
+    }
+    .womenpage {
+        display: flex;
+        justify-content: center;
+        height: 650px;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        
+    }
+
+    .womenphoto {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        overflow: hidden;
+        align-self: start;
+        width: 330px;
+        height: 500px;
+        position: absolute;
+        left: 25px;
+        top: 120px;
+    }
+    .womenimg1 {
+        background-image: url(./women-01.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 310px;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+    }
+    .womenhover {
+        width: 340px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 20px;
+        position: absolute;
+        bottom: -70px;
+        left: -30px;
+        overflow: hidden;
+        transition: all 1s;
+    }
+    /* kid,s phone viwe */
+
+    .kidheading{
+        left: 45px;
+        top: 10px;
+        width: 280px;
+    }
+    .kidpage {
+        display: flex;
+        justify-content: center;
+        height: 650px;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .kidphoto {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        overflow: hidden;
+        align-self: start;
+        width: 330px;
+        height: 500px;
+        position: absolute;
+        top: 120px;
+        left: 20px;
+    }
+    .kidimg1 {
+        background-image: url(./kid-01.jpg);
+        background-position: center;
+        background-size: cover;
+        width: 310px;
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+       
+    }
+    .kidhover {
+        width: 340px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 20px;
+        position: absolute;
+        bottom: -70px;
+        left: -30px;
+        overflow: hidden;
+        transition: all 1s;
+    }
+    /* xplore phone viwe */
+    .xplore {
+        height: auto;
+        width: 350px;
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    
+    .xploreleft {
+        width: 320px;
+        height: auto;
+    
+    }
+    
+    p {
+        font-style: italic;
+        color: rgb(42, 42, 42);
+        font-weight: 500;
+    }
+    
+    button {
+        margin-top: 20px;
+        width: 150px;
+        height: 50px;
+        border-radius: 0%;
+    }
+    .xploreright{
+        width: 350px;
+        height: auto;
+        position: relative;
+        left: 50px;
+    }
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: 300px;
+        gap: 0px;
+        height: auto;
+        width: 300px;
+       
+    }
+    
+    .box-11 {
+        background-color: rgb(248, 248, 248);
+        grid-column: 1/2;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .box-12 {
+        background-image: url(./explore-image-01.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .box-13 {
+        background-image: url(./explore-image-02.jpg);
+        background-position: center;
+        background-size: cover;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .box-14 {
+        background-color: rgb(248, 248, 248);
+        grid-column: 1/2;
+        grid-row: 4/5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+    }
+
+    /* about phone viwe */
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        height: auto;
+        gap: 20px;
+
+    }
+
+    .aboutleft {
+        width: 280px;
+        height: 380px;
+
+
+    }
+
+    .aboutright {
+        align-items: center;
+        width: 280px;
+
+    }
+
+    .aboutright-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        height: 350px;
+        width: 220px;
+        gap: 20px;
+    }
+
+    /* SocialMedia phone viwe */
+
+    .SocialMedia {
+
+        height: 40vh;
+
+    }
+
+    .SocialMediaphoto {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        top: 150px;
+
+
+    }
+
+    .new2 {}
+
+    .new3 {}
+
+    .SocialMediaheading {
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        width: 300px;
+    }
+
+
+    .fashion {
+
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .fashionhover {
+        width: 79px;
+        height: 79px;
+
+    }
+
+
+    .new {
+
+        width: 70px;
+        height: 70px;
+
+    }
+
+    .newhover {
+        width: 69px;
+        height: 69px;
+
+    }
+
+    .brand {
+
+        width: 60px;
+        height: 60px;
+
+    }
+
+    .brandhover {
+        width: 59px;
+        height: 59px;
+
+    }
+
+    .makeup {
+
+        width: 50px;
+        height: 50px;
+
+    }
+
+    .makeuphover {
+        width: 49px;
+        height: 49px;
+
+    }
+
+    .leather {
+
+        width: 40px;
+        height: 40px;
+
+    }
+
+    .leatherhover {
+        width: 39px;
+        height: 39px;
+
+    }
+
+    .bag {
+
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .baghover {
+        width: 29px;
+        height: 29px;
+
+    }
+
+    /* foot  */
+    .foot {
+        height: 800px;
+        background-color: rgb(42, 42, 42);
+    }
+
+    .toop {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 30vh;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .tooplogo {
+        background-image: url(./white-logo.png);
+        background-position: center;
+        background-size: cover;
+        width: 200px;
+        height: 60px;
+        margin-bottom: 20px;
+
+    }
+
+    .toop1 {
+        align-items: center;
+
+    }
+}
